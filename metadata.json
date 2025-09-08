@@ -1,0 +1,5 @@
+{
+  "name": "Angular-JSON-Test",
+  "description": "A simple application that dynamically loads and displays data from a local JSON file at runtime.",
+  "requestFramePermissions": []
+}
