@@ -11,10 +11,7 @@
 
     @if (loading()) {
       <div class="loader-container">
-        <svg class="loader-spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
+        <mat-progress-spinner mode="indeterminate" diameter="60"></mat-progress-spinner>
         <p class="loader-text">Loading Story...</p>
       </div>
     }
@@ -27,23 +24,25 @@
     }
 
     @if (story(); as currentStory) {
-      <article class="story-article">
-        <header class="story-header">
-          <h2 class="story-title">{{ currentStory.title }}</h2>
-          <p class="story-author">by {{ currentStory.author }}</p>
-        </header>
-
-        <div class="story-content">
-          @for (chapter of currentStory.chapters; track chapter.title) {
-            <section>
-              <h3>{{ chapter.title }}</h3>
+      <header class="story-main-header">
+        <h2 class="story-main-title">{{ currentStory.title }}</h2>
+        <p class="story-main-author">by {{ currentStory.author }}</p>
+      </header>
+      
+      <div class="chapters-container">
+        @for (chapter of currentStory.chapters; track chapter.title) {
+          <mat-card class="chapter-card">
+            <mat-card-header>
+              <mat-card-title>{{ chapter.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="chapter-content">
               @for (paragraph of chapter.content; track $index) {
                 <p>{{ paragraph }}</p>
               }
-            </section>
-          }
-        </div>
-      </article>
+            </mat-card-content>
+          </mat-card>
+        }
+      </div>
     }
   </div>
 </main>

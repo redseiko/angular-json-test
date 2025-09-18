@@ -18,16 +18,14 @@
             },
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json",
+            "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css"
+            ],
             "assets": [
               {
                 "glob": "**/*",
                 "input": "src/stories",
                 "output": "src/stories"
-              },
-              {
-                "glob": "testdata.json",
-                "input": "src",
-                "output": "src"
               }
             ]
           },

@@ -1,4 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 interface Chapter {
   title: string;
@@ -16,6 +19,11 @@ interface Story {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatProgressSpinnerModule
+  ],
 })
 export class AppComponent implements OnInit {
   
