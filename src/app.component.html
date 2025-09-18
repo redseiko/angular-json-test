@@ -26,8 +26,8 @@
       </header>
       
       <div class="chapters-container">
-        @for (chapter of currentStory.chapters; track chapter.title) {
-          <mat-card class="chapter-card" animate.enter="chapter-enter-animation; stagger: 100ms">
+        @for (chapter of currentStory.chapters; track chapter.title; let i = $index) {
+          <mat-card class="chapter-card" animate.enter="chapter-enter-animation" [style.--index]="i">
             <mat-card-header>
               <mat-card-title>{{ chapter.title }}</mat-card-title>
             </mat-card-header>
