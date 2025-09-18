@@ -179,3 +179,19 @@
     padding: 2rem; /* lg:p-8 */
   }
 }
+
+/* Chapter card enter animation */
+.chapter-enter-animation {
+  animation: chapter-fade-in-up 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes chapter-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
