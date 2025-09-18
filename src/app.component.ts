@@ -44,10 +44,7 @@ export class AppComponent implements OnInit {
       console.error('Failed to load story data:', e);
       this.error.set('Could not load story data. Please check the console for more information.');
     } finally {
-      // Simulate a small delay for a better loading experience
-      setTimeout(() => {
-        this.loading.set(false);
-      }, 500);
+      this.loading.set(false);
     }
   }
 }

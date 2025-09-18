@@ -14,16 +14,12 @@
         <mat-progress-spinner mode="indeterminate" diameter="60"></mat-progress-spinner>
         <p class="loader-text">Loading Story...</p>
       </div>
-    }
-
-    @if (error(); as errorMessage) {
+    } @else if (error(); as errorMessage) {
       <div class="error-alert" role="alert">
         <strong>Error:</strong>
         <span>{{ errorMessage }}</span>
       </div>
-    }
-
-    @if (story(); as currentStory) {
+    } @else if (story(); as currentStory) {
       <header class="story-main-header">
         <h2 class="story-main-title">{{ currentStory.title }}</h2>
         <p class="story-main-author">by {{ currentStory.author }}</p>
